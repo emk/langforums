@@ -11,6 +11,9 @@ gem 'forem-rdiscount', git: 'https://github.com/radar/forem-rdiscount.git'
 gem 'forem-theme-base', :git => "git://github.com/radar/forem-theme-base.git"
 gem 'kaminari', '0.13.0'
 
+# Industrial-strenth HTML sanitization.
+gem 'sanitize'
+
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.0"
