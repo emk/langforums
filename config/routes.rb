@@ -1,4 +1,5 @@
 Langforums::Application.routes.draw do
+  root to: redirect('/forums')
   mount Forem::Engine, :at => "/forums"
   devise_for :users
 
