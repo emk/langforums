@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/radar/forem-theme-base.git
+  revision: 3efec35538c33e10081f1fd243d99314f913d2d1
+  specs:
+    forem-theme-base (0.0.1)
+
+GIT
   remote: git://github.com/radar/forem.git
   revision: dd993982f2470317f9adc14b6eb27a24d2f95fbf
   specs:
@@ -172,6 +178,7 @@ DEPENDENCIES
   devise
   forem!
   forem-rdiscount!
+  forem-theme-base!
   jquery-rails
   kaminari (= 0.13.0)
   pg

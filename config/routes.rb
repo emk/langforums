@@ -1,4 +1,5 @@
 Langforums::Application.routes.draw do
+  mount Forem::Engine, :at => "/forums"
   devise_for :users
 
   # The priority is based upon order of creation:
