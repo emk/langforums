@@ -1,6 +1,6 @@
 Langforums::Application.routes.draw do
-  root to: redirect('/forums')
-  mount Forem::Engine, :at => "/forums"
+  root to: redirect('/f')
+  mount Forem::Engine, :at => "/f"
   devise_for :users
 
   # The priority is based upon order of creation:
