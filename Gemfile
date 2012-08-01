@@ -12,6 +12,7 @@ gem 'kaminari', '0.13.0'
 
 group :development, :test do
   gem 'sqlite3'
+  gem "rspec-rails", "~> 2.0"
 end
 
 group :production do
