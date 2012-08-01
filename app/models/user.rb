@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   # Require a public name.
   validates :public_name, presence: true
 
+  # Recently logged-in users.
+  scope :recent, order(:last_sign_in_at).limit(10)
+
+  # This is how users will be displayed in the forem UI.
   def to_s
     public_name
   end

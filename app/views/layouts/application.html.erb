@@ -23,12 +23,14 @@
   </nav>
 </header>
 
-<p><em>Our much-beloved HTLAL site is having problems.  Julie has set up
+<p><i>Our much-beloved HTLAL site is having problems.  Julie has set up
 some <a href="http://htlal.freeforums.org">temporary forums</a>. But I've
 been working on a longer-term project to make new features available to the
 HTLAL community, of which this site is a prototype.  See the posts here for
 more details. You're welcome to sign up and try it out!  <b>-emk</b> (a HTLAL
-user)</em></p>
+user)</i></p>
+
+<p><b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %><p>
 
 <% if notice %>
 <p class="notice"><%= notice %></p>
