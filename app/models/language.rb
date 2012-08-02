@@ -24,12 +24,17 @@ class Language < ActiveRecord::Base
   end
 
   # Link to an external language database.
-  def external_link
+  def wikipedia_link
     "http://en.wikipedia.org/wiki/ISO_639:#{iso_639}"
   end
 
   # Link to Ethnologue database
   def ethnologue_link
     "http://www.ethnologue.com/show_language.asp?code=#{iso_639_3}"
+  end
+
+  # Our own wiki profiles.
+  def htlal_wiki_link
+    "http://learnanylanguage.wikia.com/wiki/#{inverted_name.gsub(' ', '_')}"
   end
 end

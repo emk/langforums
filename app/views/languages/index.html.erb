@@ -9,7 +9,8 @@
 
 <ul>
 <% @languages.each do |language| %>
-  <li><%= link_to language.inverted_name, language.external_link %>
-(<%= link_to 'SIL', language.ethnologue_link %>)</li>
+  <li><%= link_to language.inverted_name, language.wikipedia_link %>
+<small>(<%= link_to 'SIL', language.ethnologue_link %>)
+(<%= link_to 'wiki', language.htlal_wiki_link %>)</small></li>
 <% end %>
 </ul>
