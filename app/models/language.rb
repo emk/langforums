@@ -35,6 +35,6 @@ class Language < ActiveRecord::Base
 
   # Our own wiki profiles.
   def htlal_wiki_link
-    "http://learnanylanguage.wikia.com/wiki/#{inverted_name.gsub(' ', '_')}"
+    "http://learnanylanguage.wikia.com/wiki/#{name.gsub(' ', '_')}"
   end
 end
