@@ -1,6 +1,8 @@
 Langforums::Application.routes.draw do
+
   root to: redirect('/f')
   mount Forem::Engine, :at => "/f"
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
   match "/languages" => "languages#index", as: :languages

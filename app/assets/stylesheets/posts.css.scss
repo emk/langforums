@@ -1,0 +1,20 @@
+.simple_form {
+  &.new_topic, &.edit_topic, &.new_post, &.edit_post {
+    label {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .input {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"], .error {
+      margin-left: 0;
+    }
+  }
+}
