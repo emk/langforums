@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801155443) do
+ActiveRecord::Schema.define(:version => 20120801230407) do
 
   create_table "forem_categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -107,6 +107,28 @@ ActiveRecord::Schema.define(:version => 20120801155443) do
   add_index "forem_views", ["updated_at"], :name => "index_forem_views_on_updated_at"
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
+
+  create_table "languages", :force => true do |t|
+    t.integer  "macrolanguage_id"
+    t.string   "iso_639_1",        :limit => 2
+    t.string   "iso_639_2t",       :limit => 3
+    t.string   "iso_639_2b",       :limit => 3
+    t.string   "iso_639_3",        :limit => 3
+    t.string   "iso_639_scope",    :limit => 1
+    t.string   "iso_639_type",     :limit => 1
+    t.string   "name",                          :null => false
+    t.string   "inverted_name"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "languages", ["inverted_name"], :name => "index_languages_on_inverted_name"
+  add_index "languages", ["iso_639_1"], :name => "index_languages_on_iso_639_1"
+  add_index "languages", ["iso_639_2b"], :name => "index_languages_on_iso_639_2b"
+  add_index "languages", ["iso_639_2t"], :name => "index_languages_on_iso_639_2t"
+  add_index "languages", ["iso_639_3"], :name => "index_languages_on_iso_639_3"
+  add_index "languages", ["macrolanguage_id"], :name => "index_languages_on_macrolanguage_id"
+  add_index "languages", ["name"], :name => "index_languages_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",         :null => false
