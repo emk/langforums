@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= require 'forem/base/style'
- *= require 'simple_form'
+ *= require forem/base/style
+ *= require simple_form
  */
