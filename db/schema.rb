@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801230407) do
+ActiveRecord::Schema.define(:version => 20120802140945) do
 
   create_table "forem_categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -120,8 +120,12 @@ ActiveRecord::Schema.define(:version => 20120801230407) do
     t.string   "inverted_name"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "code"
+    t.string   "alt_code"
   end
 
+  add_index "languages", ["alt_code"], :name => "index_languages_on_alt_code"
+  add_index "languages", ["code"], :name => "index_languages_on_code", :unique => true
   add_index "languages", ["inverted_name"], :name => "index_languages_on_inverted_name"
   add_index "languages", ["iso_639_1"], :name => "index_languages_on_iso_639_1"
   add_index "languages", ["iso_639_2b"], :name => "index_languages_on_iso_639_2b"
