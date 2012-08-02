@@ -27,4 +27,9 @@ class Language < ActiveRecord::Base
   def external_link
     "http://en.wikipedia.org/wiki/ISO_639:#{iso_639}"
   end
+
+  # Link to Ethnologue database
+  def ethnologue_link
+    "http://www.ethnologue.com/show_language.asp?code=#{iso_639_3}"
+  end
 end
