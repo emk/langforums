@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :public_name
 
-  # Require a public name.
-  validates :public_name, presence: true
+  # Validations.
+  validates :public_name, presence: true, uniqueness: true
 
   # Recently logged-in users.
   scope :recent, order(:last_sign_in_at).limit(10)
