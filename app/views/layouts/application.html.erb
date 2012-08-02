@@ -30,7 +30,9 @@ HTLAL community, of which this site is a prototype.  See the posts here for
 more details. You're welcome to sign up and try it out!  <b>-emk</b> (a HTLAL
 user)</i></p>
 
-<p><%= link_to "#{Language.count} languages", main_app.languages_path %><br>
+<p>
+<%= link_to 'Forum', forem.root_url %>
+| <%= link_to "#{Language.count} languages", main_app.languages_path %><br>
 <b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %>
 </p>
 
