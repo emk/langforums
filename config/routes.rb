@@ -3,6 +3,8 @@ Langforums::Application.routes.draw do
   mount Forem::Engine, :at => "/f"
   devise_for :users
 
+  match "/languages" => "languages#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,14 @@
+<h1>Languages</h1>
+
+<%= form_tag languages_path, method: :get do %>
+<p>
+<%= text_field_tag 'q', @query, placeholder: "Search for a language" %>
+<%= submit_tag "Search" %>
+</p>
+<% end %>
+
+<ul>
+<% @languages.each do |language| %>
+  <li><%= language.inverted_name %></li>
+<% end %>
+</ul>
