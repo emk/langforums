@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :public_name, presence: true, uniqueness: true
 
   # Recently logged-in users.
-  scope :recent, order(:last_sign_in_at).limit(10)
+  scope :recent, order('last_sign_in_at DESC').limit(10)
 
   # This is how users will be displayed in the forem UI.
   def to_s
