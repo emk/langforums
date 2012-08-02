@@ -3,7 +3,7 @@
 <%= form_tag languages_path, method: :get do %>
 <p>
 <%= text_field_tag 'q', @query, placeholder: "Search for a language" %>
-<%= submit_tag "Search" %>
+<%= submit_tag "Search", name: nil %>
 </p>
 <% end %>
 
