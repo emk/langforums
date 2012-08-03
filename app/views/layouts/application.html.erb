@@ -23,17 +23,18 @@
   </nav>
 </header>
 
-<p><i>Our much-beloved HTLAL site is having problems.  Julie has set up
-some <a href="http://htlal.freeforums.org">temporary forums</a>. But I've
-been working on a longer-term project to make new features available to the
-HTLAL community, of which this site is a prototype.  See the posts here for
-more details. You're welcome to sign up and try it out!  <b>-emk</b> (a HTLAL
-user)</i></p>
+<p><i>This site doesn't actually contain any forums.  You can find those
+over on <%= link_to 'How-To-Learn-Any-Language.com', htlal_forum_url %>.
+Instead, this site provides experimental features for HTLAL
+users. <b>-emk</b> (a HTLAL user)</i></p>
 
 <p>
-<%= link_to 'Forum', forem.root_url %>
-| <%= link_to "#{Language.count} languages", main_app.languages_path %><br>
-<b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %>
+<%= link_to "#{Language.count} languages", main_app.languages_path %>
+| <%= link_to 'Report a Bug', '/f/forums/bug-reports' %>
+| <%= link_to 'HTLAL Language Forums', htlal_forum_url %>
+<% if current_user %>
+<br><b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %>
+<% end %>
 </p>
 
 <% if notice %>
