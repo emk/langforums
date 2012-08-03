@@ -30,8 +30,9 @@ users. <b>-emk</b> (a HTLAL user)</i></p>
 
 <p>
 <%= link_to "#{Language.count} languages", main_app.languages_path %>
-| <%= link_to 'Report a Bug', '/f/forums/bug-reports' %>
-| <%= link_to 'HTLAL Language Forums', htlal_forum_url %>
+| <%= link_to 'Report a bug', '/f/forums/bug-reports' %>
+| <%= link_to 'HTLAL language forums', htlal_forum_url %>
+| <%= link_to 'Source code for langforums.org', langforums_github_url %>
 <% if current_user %>
 <br><b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %>
 <% end %>
