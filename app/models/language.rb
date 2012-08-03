@@ -13,6 +13,16 @@ class Language < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :inverted_name, uniqueness: true
 
+  # Search for a language.  This function may eventually become more
+  # sophisticated.
+  scope(:matches, lambda do |query|
+    where(Language.arel_table[:inverted_name].matches("%#{query}%"))
+  end)
+
+  # Place ISO 639-1 languages first, because they're popular, and alphabetize
+  # things otherwise.
+  scope :major_languages_first, order('iso_639_1 IS NULL', :inverted_name)
+
   # Set up a sensible primary key that we can use in the UI.
   before_validation do
     self.code = iso_639
@@ -24,17 +34,41 @@ class Language < ActiveRecord::Base
   end
 
   # Link to an external language database.
-  def wikipedia_link
+  def wikipedia_url
     "http://en.wikipedia.org/wiki/ISO_639:#{iso_639}"
   end
 
   # Link to Ethnologue database
-  def ethnologue_link
+  def ethnologue_url
     "http://www.ethnologue.com/show_language.asp?code=#{iso_639_3}"
   end
 
+  # Link to various maps.  Some of the major language maps have problems
+  def llmap_url
+    "http://llmap.org/languages/#{iso_639_3}.html"
+  end
+
+  # Stored directly in database.
+  #htlal_profile_url
+
+  # The most popular threads on HTLAL.
+  def htlal_threads_url
+    if htlal_keyword_id
+      "http://how-to-learn-any-language.com/forum/keyword.asp?KW=#{htlal_keyword_id}"
+    else
+      nil
+    end
+  end
+
+  # A list of everybody who knows or studies this language on HTLAL.
+  def htlal_users_url
+    if htlal_language_id
+      "http://how-to-learn-any-language.com/forum/languages.asp?language=#{htlal_language_id}"
+    end
+  end
+
   # Our own wiki profiles.
-  def htlal_wiki_link
+  def htlal_wiki_url
     "http://learnanylanguage.wikia.com/wiki/#{name.gsub(' ', '_')}"
   end
 end

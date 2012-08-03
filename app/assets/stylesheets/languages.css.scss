@@ -2,9 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.sil-credit {
-  margin-top: 100px;
+.language-links, .sil-credit {
   font-size: 80%;
   color: grey;
   a:link, a:visited { color: grey; }
+  a:hover { color: #00E; }
+}
+
+.language-links {
+  margin-left: 10px;
+}
+
+.sil-credit {
+  margin-top: 100px;
 }

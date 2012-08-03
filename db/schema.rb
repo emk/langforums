@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802140945) do
+ActiveRecord::Schema.define(:version => 20120803180706) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -126,18 +126,21 @@ ActiveRecord::Schema.define(:version => 20120802140945) do
 
   create_table "languages", :force => true do |t|
     t.integer  "macrolanguage_id"
-    t.string   "iso_639_1",        :limit => 2
-    t.string   "iso_639_2t",       :limit => 3
-    t.string   "iso_639_2b",       :limit => 3
-    t.string   "iso_639_3",        :limit => 3
-    t.string   "iso_639_scope",    :limit => 1
-    t.string   "iso_639_type",     :limit => 1
-    t.string   "name",                          :null => false
+    t.string   "iso_639_1",         :limit => 2
+    t.string   "iso_639_2t",        :limit => 3
+    t.string   "iso_639_2b",        :limit => 3
+    t.string   "iso_639_3",         :limit => 3
+    t.string   "iso_639_scope",     :limit => 1
+    t.string   "iso_639_type",      :limit => 1
+    t.string   "name",                           :null => false
     t.string   "inverted_name"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "code"
     t.string   "alt_code"
+    t.integer  "htlal_keyword_id"
+    t.integer  "htlal_language_id"
+    t.string   "htlal_profile_url"
   end
 
   add_index "languages", ["alt_code"], :name => "index_languages_on_alt_code"
