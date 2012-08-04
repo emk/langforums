@@ -1,31 +1,34 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   layouts:
-    sign_up: "Sign up"
-    sign_in: "Sign in"
-    sign_out: "Sign out"
+    sign_up: Sign up
+    sign_in: Sign in
+    sign_out: Sign out
     language_count:
-      one: "1 language"
-      other: "%{count} languages"
-    report_bug: "Report a bug"
-    htlal_forums: "HTLAL language forums"
-    source_code: "Source code for langforums.org"
-    translate: "Help translate this site!"
-    recent_users: "Recent users:"
-    search_languages: "Search for a language"
-
+      one: 1 language
+      other: ! '%{count} languages'
+    report_bug: Report a bug
+    htlal_forums: HTLAL language forums
+    source_code: Source code for langforums.org
+    translate: Help translate this site!
+    recent_users: ! 'Recent users:'
+    search_languages: Search for a language
   languages:
-    title: "Languages"
-    search_hint: "Search for a language"
-    search_button: "Search"
-    sil: "SIL"
-    htlal_profile: "htlal profile"
-    htlal_users: "htlal users"
-    htlal_threads: "htlal threads"
-    wiki: "wiki"
-    maps: "maps"
-    sil_credit:
-      This database is based on the <a href="http://www.sil.org/iso639-3/">SIL
+    title: Languages
+    search_hint: Search for a language
+    search_button: Search
+    sil: SIL
+    htlal_profile: htlal profile
+    htlal_users: htlal users
+    htlal_threads: htlal threads
+    wiki: wiki
+    maps: maps
+    sil_credit: This database is based on the <a href="http://www.sil.org/iso639-3/">SIL
       language codes</a>.
+  simple_form:
+    error_notification:
+      default_message: ! 'Please review the problems below:'
+    'no': 'No'
+    required:
+      mark: ! '*'
+      text: required
+    'yes': 'Yes'
