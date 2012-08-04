@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/iain/http_accept_language.git
+  revision: 3333337d37840c40ab2c20b813881e0025adbec6
+  specs:
+    http_accept_language (2.0.0.pre)
+
+GIT
   remote: git://github.com/radar/forem-theme-base.git
   revision: 3efec35538c33e10081f1fd243d99314f913d2d1
   specs:
@@ -6,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/radar/forem.git
-  revision: be8c9768838203db79197153ff08ebe8a56502c2
+  revision: 4c6854692835c7fb6ae1b28c8d1c46411973a2a3
   specs:
     forem (1.0.0.beta1)
       cancan (= 1.6.7)
@@ -184,6 +190,7 @@ DEPENDENCIES
   devise
   forem!
   forem-theme-base!
+  http_accept_language!
   jquery-rails
   kaminari (= 0.13.0)
   paperclip

@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
+  # Languages in which we will attempt to display the site.
+  AVAILABLE_LANGUAGES = %w(bg de en es fa fr it nl pl pt-BR pt-PT ru sv zh-CN)
+
   protect_from_forgery
+  before_filter :set_locale
 
   # Use the Devise current_user with Forem (of course).
   def forem_user
@@ -8,6 +12,12 @@ class ApplicationController < ActionController::Base
   helper_method :forem_user
 
   protected
+
+  # Configure our locale appropriately.
+  def set_locale
+    I18n.locale =
+      http_accept_language.preferred_language_from(AVAILABLE_LANGUAGES)
+  end
 
   # Store HTML editor resources on a per-user basis.
   def ckeditor_filebrowser_scope(options = {})

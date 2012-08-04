@@ -7,7 +7,7 @@ gem 'devise'
 
 # Forem is our forum software.
 gem 'forem', git: "git://github.com/radar/forem.git"
-gem 'forem-theme-base', :git => "git://github.com/radar/forem-theme-base.git"
+gem 'forem-theme-base', git: "git://github.com/radar/forem-theme-base.git"
 gem 'kaminari', '0.13.0'
 
 # Industrial-strenth HTML sanitization.
@@ -16,6 +16,9 @@ gem 'sanitize'
 # Shiny HTML editor & image storage.
 gem 'ckeditor'
 gem 'paperclip'
+
+# Check HTTP headers to see what languages the user understands.
+gem 'http_accept_language', git: "git://github.com/iain/http_accept_language.git"
 
 group :development, :test do
   gem 'sqlite3'
