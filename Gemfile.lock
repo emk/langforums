@@ -83,6 +83,7 @@ GEM
       pygments.rb (= 0.2.4)
       redcarpet (= 2.0.1)
     friendly_id (4.0.8)
+    gli (1.6.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -94,6 +95,12 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    localeapp (0.5.0)
+      gli
+      i18n
+      json
+      rest-client
+      ya2yaml
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -140,6 +147,8 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.0.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -183,6 +192,7 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     workflow (0.8.0)
+    ya2yaml (0.31)
 
 PLATFORMS
   ruby
@@ -197,6 +207,7 @@ DEPENDENCIES
   http_accept_language!
   jquery-rails
   kaminari (= 0.13.0)
+  localeapp
   paperclip
   pg
   rails (~> 3.2.7)

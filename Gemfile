@@ -19,6 +19,9 @@ gem 'sanitize'
 gem 'ckeditor'
 gem 'paperclip'
 
+# Make it easy to translate the site.
+gem 'localeapp'
+
 # Check HTTP headers to see what languages the user understands.
 gem 'http_accept_language', git: "git://github.com/iain/http_accept_language.git"
 
