@@ -1,29 +1,28 @@
 fr:
+  languages:
+    htlal_profile: profil sur htlal
+    htlal_threads: fils sur htlal
+    htlal_users: utilisateurs sur htlal
+    maps: cartes
+    search_button: Chercher
+    search_hint: Cherchez une langue
+    sil: SIL
+    sil_credit: Cette base de données est basée sur <a href="http://www.sil.org/iso639-3/">les
+      codes de langue de SIL</a>.
+    title: Langues
+    wiki: wiki
   layouts:
-    sign_up: S'incrirer
-    sign_in: Se connecter
-    sign_out: Se déconnecter
     language_count:
       one: 1 langue
       other: ! '%{count} langues'
-    report_bug: Signaler un bug
-    htlal_forums: Forums de HTLAL
-    source_code: Code source de langforums.org
     recent_users: ! 'Utilisateurs récents :'
+    report_bug: Signaler un bug
     search_languages: Cherchez une langue
+    sign_in: Se connecter
+    sign_out: Se déconnecter
+    sign_up: S'incrirer
+    source_code: Code source de langforums.org
     translate: Traduire ce site !
-  languages:
-    title: Langues
-    search_hint: Cherchez une langue
-    search_button: Chercher
-    sil: SIL
-    htlal_profile: profil sur htlal
-    htlal_users: utilisateurs sur htlal
-    htlal_threads: fils sur htlal
-    wiki: wiki
-    maps: cartes
-    sil_credit: Cette base de données est basée sur <a href="http://www.sil.org/iso639-3/">les
-      codes de langue de SIL</a>.
   simple_form:
     error_notification:
       default_message: ! 'Révisez les problèmes ci-dessous, s''il vous plaît :'
