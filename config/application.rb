@@ -62,5 +62,8 @@ module Langforums
 
     # Make Devise play nicely with Heroku.
     config.assets.initialize_on_precompile = false
+
+    # Fall back to default language when no translation available.
+    config.i18n.fallbacks = true
   end
 end

@@ -1,0 +1,26 @@
+fr:
+  # layouts
+  sign_up: "S'incrirer"
+  sign_in: "Se connecter"
+  sign_out: "Se déconnecter"
+  language_count:
+    one: "1 langue"
+    other: "%{count} langues"
+  report_bug: "Signaler un bug"
+  htlal_forums: "Forums de HTLAL"
+  source_code: "Code source de langforums.org"
+  recent_users: "Utilisateurs récents :"
+
+  # languages
+  languages: "Langues"
+  search_languages: "Cherchez une langue"
+  search: "Chercher"
+  sil: "SIL"
+  htlal_profile: "profil sur htlal"
+  htlal_users: "utilisateurs sur htlal"
+  htlal_threads: "fils sur htlal"
+  wiki: "wiki"
+  maps: "cartes"
+  sil_credit:
+    Cette base de données est basée sur 
+    <a href="http://www.sil.org/iso639-3/">les codes de langue de SIL</a>.

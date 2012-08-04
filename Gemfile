@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.7'
+gem 'rails-i18n'
 
 # User account management.
 gem 'devise'
+gem 'devise-i18n'
 
 # Forem is our forum software.
 gem 'forem', git: "git://github.com/radar/forem.git"

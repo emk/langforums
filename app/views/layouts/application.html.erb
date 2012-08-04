@@ -12,32 +12,27 @@
   <nav>
     <% if user_signed_in? %>
       <%= link_to current_user.email, main_app.edit_user_registration_path %>
-      | <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %>
+      | <%= link_to t(:sign_out), main_app.destroy_user_session_path, :method => :delete %>
       <% if current_user.forem_admin %>
-      | <%= link_to "Administrate", forem.admin_root_url %>
+      | <%= link_to t(:area, :scope => 'forem.admin'), forem.admin_root_url %>
       <% end %>
     <% else %>
-      <%= link_to "Sign up", main_app.new_user_registration_path %>
-      | <%= link_to "Sign in", main_app.new_user_session_path %>
+      <%= link_to t(:sign_up), main_app.new_user_registration_path %>
+      | <%= link_to t(:sign_in), main_app.new_user_session_path %>
     <% end %>
   </nav>
 </header>
 
-<p><i>This site doesn't actually contain any forums.  You can find those
-over on <%= link_to 'How-To-Learn-Any-Language.com', htlal_forum_url %>.
-Instead, this site provides experimental features for HTLAL
-users. <b>-emk</b> (a HTLAL user)</i></p>
-
-<p><b>HTLAL is down!</b> See <a href="http://htlal.freeforums.org/">the
-backup forum</a>.</p>
+<%= t(:introduction).html_safe %>
 
 <p>
-<%= link_to "#{Language.count} languages", main_app.languages_path %>
-| <%= link_to 'Report a bug', '/f/forums/bug-reports' %>
-| <%= link_to 'HTLAL language forums', htlal_forum_url %>
-| <%= link_to 'Source code for langforums.org', langforums_github_url %>
+<%= link_to t(:language_count, count: Language.count), main_app.languages_path %>
+| <%= link_to t(:report_bug), '/f/forums/bug-reports' %>
+| <%= link_to t(:htlal_forums), htlal_forum_url %>
+| <%= link_to t(:source_code), langforums_github_url %>
 <% if current_user %>
-<br><b>Recent users:</b> <%= User.recent.map(&:public_name).join(', ') %>
+<br><b><%= t(:recent_users) %></b>
+<%= User.recent.map(&:public_name).join(', ') %>
 <% end %>
 </p>
 

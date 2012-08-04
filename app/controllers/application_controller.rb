@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
   # Configure our locale appropriately.
   def set_locale
     I18n.locale =
-      http_accept_language.preferred_language_from(AVAILABLE_LANGUAGES)
+      http_accept_language.preferred_language_from(AVAILABLE_LANGUAGES) ||
+        I18n.default_locale
   end
 
   # Store HTML editor resources on a per-user basis.

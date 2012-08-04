@@ -2,4 +2,38 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  # layouts
+  sign_up: "Sign up"
+  sign_in: "Sign in"
+  sign_out: "Sign out"
+  language_count:
+    one: "1 language"
+    other: "%{count} languages"
+  report_bug: "Report a bug"
+  htlal_forums: "HTLAL language forums"
+  source_code: "Source code for langforums.org"
+  recent_users: "Recent users:"
+  introduction:
+    <p><i>This site doesn't actually contain any forums.  You can find those
+    over on
+    <a href="how-to-learn-any-language.com">How-To-Learn-Any-Language.com</a>.
+    Instead, this site provides experimental features for HTLAL
+    users. <b>-emk</b> (a HTLAL user)</i></p>
+    
+    <p><b>HTLAL is down!</b> See <a href="http://htlal.freeforums.org/">the
+    backup forum</a>.</p>
+  search_languages: "Search for a language"
+
+  # languages
+  languages: "Languages"
+  search_languages: "Search for a language"
+  search: "Search"
+  sil: "SIL"
+  htlal_profile: "htlal profile"
+  htlal_users: "htlal users"
+  htlal_threads: "htlal threads"
+  wiki: "wiki"
+  maps: "maps"
+  sil_credit:
+    This database is based on the <a href="http://www.sil.org/iso639-3/">SIL
+    language codes</a>.
