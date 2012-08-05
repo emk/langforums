@@ -12,7 +12,7 @@
   <nav>
     <% if user_signed_in? %>
       <%= link_to current_user.email, main_app.edit_user_registration_path %>
-      | <%= link_to t('.sign_out'), main_app.destroy_user_session_path, :method => :delete %>
+      | <%= link_to t('.sign_out'), main_app.destroy_user_session_path %>
       <% if current_user.forem_admin %>
       | <%= link_to t('area', :scope => 'forem.admin'), forem.admin_root_url %>
       <% end %>
