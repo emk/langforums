@@ -41,6 +41,7 @@ en:
           password: leave it blank if you don't want to change it
   user:
     signed_in: Signed in successfully.
+    signed_out: Signed out successfully.
   devise:
     registrations:
       edit:
