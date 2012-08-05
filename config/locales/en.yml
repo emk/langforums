@@ -34,5 +34,31 @@ en:
       mark: ! '*'
       text: required
     'yes': 'Yes'
+    hints:
+      user:
+        edit:
+          current_password: we need your current password to confirm your changes
+          password: leave it blank if you don't want to change it
   user:
     signed_in: Signed in successfully.
+  devise:
+    registrations:
+      edit:
+        title: Edit Account
+      new:
+        title: Sign Up
+  helpers:
+    submit:
+      user:
+        create: Sign Up
+        update: Update Account
+  activerecord:
+    attributes:
+      user:
+        current_password: Current password
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        public_name: Public name
+    models:
+      user: User

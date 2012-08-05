@@ -23,7 +23,7 @@ fr:
       search_languages: Cherchez une langue
       sign_in: Se connecter
       sign_out: Se déconnecter
-      sign_up: S'incrirer
+      sign_up: S'inscrire
       source_code: Code source de langforums.org
       translate: Traduire ce site !
   simple_form:
@@ -34,3 +34,25 @@ fr:
       mark: ! '*'
       text: requis
     'yes': Oui
+  devise:
+    registrations:
+      new:
+        title: S'inscrire
+  helpers:
+    submit:
+      user:
+        create: S'inscrire
+        update: Modifier ce(tte) Utilisateur
+  user:
+    signed_out: Déconnecté avec succès.
+    signed_in: Connecté avec succès.
+  activerecord:
+    attributes:
+      user:
+        current_password: Mot de passe actuel
+        email: Email
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
+        public_name: Nom (public)
+    models:
+      user: Utilisateur
