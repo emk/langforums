@@ -17,6 +17,7 @@ fr:
       language_count:
         one: 1 langue
         other: ! '%{count} langues'
+        zero: Aucune langue
       recent_users: ! 'Utilisateurs récents :'
       report_bug: Signaler un bug
       search_languages: Cherchez une langue

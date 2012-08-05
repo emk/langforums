@@ -15,7 +15,7 @@ en:
   layouts:
     application:
       language_count:
-        zero: no languages
+        zero: No languages
         one: 1 language
         other: ! '%{count} languages'
       recent_users: ! 'Recent users:'
