@@ -12,13 +12,13 @@
   <nav>
     <% if user_signed_in? %>
       <%= link_to current_user.email, main_app.edit_user_registration_path %>
-      | <%= link_to t('layouts.sign_out'), main_app.destroy_user_session_path, :method => :delete %>
+      | <%= link_to t('.sign_out'), main_app.destroy_user_session_path, :method => :delete %>
       <% if current_user.forem_admin %>
       | <%= link_to t('area', :scope => 'forem.admin'), forem.admin_root_url %>
       <% end %>
     <% else %>
-      <%= link_to t('layouts.sign_up'), main_app.new_user_registration_path %>
-      | <%= link_to t('layouts.sign_in'), main_app.new_user_session_path %>
+      <%= link_to t('.sign_up'), main_app.new_user_registration_path %>
+      | <%= link_to t('.sign_in'), main_app.new_user_session_path %>
     <% end %>
   </nav>
 </header>
@@ -36,12 +36,12 @@ backup forum</a>.</p>
 </div>
 
 <p>
-<%= link_to t('layouts.language_count', count: Language.count), main_app.languages_path %>
-| <%= link_to t('layouts.report_bug'), '/f/forums/bug-reports' %>
-| <%= link_to t('layouts.source_code'), langforums_github_url %>
-| <%= link_to t('layouts.translate'), 'http://www.localeapp.com/projects/1531' %>
+<%= link_to t('.language_count', count: Language.count), main_app.languages_path %>
+| <b><%= link_to t('.translate'), 'http://www.localeapp.com/projects/1533' %></b>
+| <%= link_to t('.report_bug'), '/f/forums/bug-reports' %>
+| <%= link_to t('.source_code'), langforums_github_url %>
 <% if current_user %>
-<br><b><%= t('layouts.recent_users') %></b>
+<br><b><%= t('.recent_users') %></b>
 <%= User.recent.map(&:public_name).join(', ') %>
 <% end %>
 </p>

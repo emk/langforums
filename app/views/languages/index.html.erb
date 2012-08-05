@@ -1,9 +1,9 @@
-<h1><%= t('languages.title') %></h1>
+<h1><%= t('.title') %></h1>
 
 <%= form_tag languages_path, method: :get do %>
 <p>
-<%= text_field_tag 'q', @query, placeholder: t('languages.search_hint') %>
-<%= submit_tag t('languages.search_button'), name: nil %>
+<%= text_field_tag 'q', @query, placeholder: t('.search_hint') %>
+<%= submit_tag t('.search_button'), name: nil %>
 </p>
 <% end %>
 
@@ -11,20 +11,20 @@
 <% @languages.each do |language| %>
   <li><%= link_to language.inverted_name, language.wikipedia_url %>
 <span class="language-links">
-(<%= link_to t('languages.sil'), language.ethnologue_url %>)
+(<%= link_to t('.sil'), language.ethnologue_url %>)
 <% if language.htlal_profile_url %>
-(<%= link_to t('languages.htlal_profile'), language.htlal_profile_url %>)
+(<%= link_to t('.htlal_profile'), language.htlal_profile_url %>)
 <% end %>
 <% if language.htlal_users_url %>
-(<%= link_to t('languages.htlal_users'), language.htlal_users_url %>)
+(<%= link_to t('.htlal_users'), language.htlal_users_url %>)
 <% end %>
 <% if language.htlal_threads_url %>
-(<%= link_to t('languages.htlal_threads'), language.htlal_threads_url %>)
+(<%= link_to t('.htlal_threads'), language.htlal_threads_url %>)
 <% end %>
-(<%= link_to t('languages.wiki'), language.htlal_wiki_url %>)
-(<%= link_to t('languages.maps'), language.llmap_url %>)
+(<%= link_to t('.wiki'), language.htlal_wiki_url %>)
+(<%= link_to t('.maps'), language.llmap_url %>)
 </span></li>
 <% end %>
 </ul>
 
-<p class="sil-credit"><%= t('languages.sil_credit').html_safe %><p>
+<p class="sil-credit"><%= t('.sil_credit').html_safe %><p>
