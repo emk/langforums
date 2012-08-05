@@ -13,11 +13,17 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # Configure our locale appropriately.
+  # Configure our locale appropriately, using either a cookie set by
+  # JavaScript, or by asking the user's browser which language is best.
   def set_locale
-    I18n.locale =
-      http_accept_language.preferred_language_from(AVAILABLE_LANGUAGES) ||
-        I18n.default_locale
+    available = TRANSLATIONS.map(&:code)
+    puts "Cookie: #{cookies[:locale]}"
+    if cookies[:locale] && available.include?(cookies[:locale])
+      selected = cookies[:locale]
+    end
+    I18n.locale = selected ||
+      http_accept_language.preferred_language_from(available) ||
+      I18n.default_locale
   end
 
   # Store HTML editor resources on a per-user basis.

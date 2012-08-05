@@ -1,0 +1,28 @@
+- code: en
+  name: English
+- code: fr
+  name: le français
+- code: bg
+  name: български език
+- code: de
+  name: Deutsch
+- code: es
+  name: español
+- code: fa
+  name: فارسی
+- code: it
+  name: italiano
+- code: nl
+  name: Nederlands
+- code: pl
+  name: język polski
+- code: pt-BR
+  name: português brasileiro
+- code: pt-PT
+  name: português europeu
+- code: ru
+  name: русский язык
+- code: sv
+  name: svenska
+- code: zh-CN
+  name: 中文
