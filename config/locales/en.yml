@@ -34,3 +34,5 @@ en:
       mark: ! '*'
       text: required
     'yes': 'Yes'
+  user:
+    signed_in: Signed in successfully.
