@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   # JavaScript, or by asking the user's browser which language is best.
   def set_locale
     available = TRANSLATIONS.map(&:code)
-    puts "Cookie: #{cookies[:locale]}"
     if cookies[:locale] && available.include?(cookies[:locale])
       selected = cookies[:locale]
     end
