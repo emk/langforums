@@ -14,5 +14,7 @@
 /log/*.log
 /log/localeapp.yml
 /tmp
-.localeapp
-.env
+/.localeapp
+/.env
+/junk
+
