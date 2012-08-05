@@ -1,0 +1,39 @@
+!!! 5
+%html
+  %head
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title langforums
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    = render partial: 'layouts/navbar'
+    .container
+      .row
+        .span12
+          - if notice
+            %p.notice= notice
+          - if alert
+            %p.alert= alert
+      .row
+        .span8= yield
+        .span4
+          .site-note
+            %p  
+              <i>This site doesn't actually contain any forums.  You can
+              find those over on
+              <a href="how-to-learn-any-language.com">How-To-Learn-Any-Language.com</a>.
+              Instead, this site provides experimental features for HTLAL
+              users. <b>-emk</b> (a HTLAL user)</i></p>
+
+              <p><b>HTLAL is down!</b>
+              See <a href="http://htlal.freeforums.org/">the backup
+              forum</a>.</p>
+          %p
+            = link_to t('.translate'), 'http://www.localeapp.com/projects/1537'
+          - if current_user
+            %p
+              %b= t('.recent_users')
+              = User.recent.map(&:public_name).join(', ')
+

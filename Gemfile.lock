@@ -5,12 +5,6 @@ GIT
     http_accept_language (2.0.0.pre)
 
 GIT
-  remote: git://github.com/radar/forem-theme-base.git
-  revision: 3efec35538c33e10081f1fd243d99314f913d2d1
-  specs:
-    forem-theme-base (0.0.1)
-
-GIT
   remote: git://github.com/radar/forem.git
   revision: 4c6854692835c7fb6ae1b28c8d1c46411973a2a3
   specs:
@@ -55,6 +49,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     blankslate (2.1.2.4)
+    bootstrap-sass (2.0.4.0)
     builder (3.0.0)
     cancan (1.6.7)
     ckeditor (3.7.1)
@@ -84,6 +79,7 @@ GEM
       redcarpet (= 2.0.1)
     friendly_id (4.0.8)
     gli (1.6.0)
+    haml (3.1.6)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -202,12 +198,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 2.0.4.0)
   ckeditor
   coffee-rails (~> 3.2.1)
   devise
   devise-i18n
   forem!
-  forem-theme-base!
+  haml
   http_accept_language!
   jquery-cookie-rails
   jquery-rails

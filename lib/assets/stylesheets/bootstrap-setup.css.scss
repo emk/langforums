@@ -1,0 +1,5 @@
+// Main copy of Bootstrap.  We configure everything, include it, and turn on
+// responsive layout so that we can deal with tablets.
+
+@import 'bootstrap';
+@import 'bootstrap-responsive';

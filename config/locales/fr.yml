@@ -14,18 +14,19 @@ fr:
       wiki: wiki
   layouts:
     application:
+      recent_users: ! 'Utilisateurs récents :'
+      translate: Traduire ce site !
+    navbar:
       language_count:
         one: 1 langue
         other: ! '%{count} langues'
         zero: Aucune langue
-      recent_users: ! 'Utilisateurs récents :'
       report_bug: Signaler un bug
-      search_languages: Cherchez une langue
       sign_in: Se connecter
       sign_out: Se déconnecter
       sign_up: S'inscrire
       source_code: Code source de langforums.org
-      translate: Traduire ce site !
+      test_forums: Forums expérimentaux
   simple_form:
     error_notification:
       default_message: ! 'Révisez les problèmes ci-dessous, s''il vous plaît :'
@@ -56,3 +57,9 @@ fr:
         public_name: Nom (public)
     models:
       user: Utilisateur
+  topic:
+    new:
+      subject: Sujet
+    posts:
+      new:
+        text: Texte

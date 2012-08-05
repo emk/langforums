@@ -14,18 +14,20 @@ en:
       wiki: wiki
   layouts:
     application:
+      recent_users: ! 'Recent users:'
+      translate: Help translate this site!
+    navbar:
+      edit_account: Edit account
       language_count:
-        zero: No languages
         one: 1 language
         other: ! '%{count} languages'
-      recent_users: ! 'Recent users:'
+        zero: No languages
       report_bug: Report a bug
-      search_languages: Search for a language
       sign_in: Sign in
       sign_out: Sign out
       sign_up: Sign up
       source_code: Source code for langforums.org
-      translate: Help translate this site!
+      test_forums: Test forums
   simple_form:
     error_notification:
       default_message: ! 'Please review the problems below:'

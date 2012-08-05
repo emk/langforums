@@ -1,0 +1,2 @@
+= select_tag('locale', options_for_select(TRANSLATIONS.map {|t| [t.name, t.code] }, selected: I18n.locale), class: 'language-menu')
+

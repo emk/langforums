@@ -1,0 +1,38 @@
+-# Top-of screen navbar.
+.navbar
+  .navbar-inner
+    .container
+      -# Popup button for menu when collapsed.
+      %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      -# Our site logo.
+      %a.brand{href: main_app.root_path} langforums
+
+      -# This stuff is hidden on small screens.
+      .nav-collapse
+        %ul.nav.pull-left
+          %li= link_to t('.language_count', count: Language.count), main_app.languages_path
+          - if user_signed_in? && current_user.forem_admin?
+            %li= link_to t('.test_forums'), forem.root_path
+          %li= link_to t('.report_bug'), '/f/forums/bug-reports'
+          %li= link_to t('.source_code'), langforums_github_url
+
+        %ul.nav.pull-right
+          - if user_signed_in?
+            %li.dropdown
+              %a.dropdown-toggle(href="#" data-toggle="dropdown")
+                = current_user.public_name
+                %b.caret
+              %ul.dropdown-menu
+                - if current_user.forem_admin?
+                  %li= link_to t('area', :scope => 'forem.admin'), forem.admin_root_path
+                %li= link_to t('.edit_account'), main_app.edit_user_registration_path
+                %li= link_to t('.sign_out'), main_app.destroy_user_session_path
+          - else
+            %li= link_to t('.sign_up'), main_app.new_user_registration_path
+            %li= link_to t('.sign_in'), main_app.new_user_session_path
+          %li
+            %form.navbar-form= render partial: 'layouts/language_menu'

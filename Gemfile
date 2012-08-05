@@ -9,7 +9,6 @@ gem 'devise-i18n'
 
 # Forem is our forum software.
 gem 'forem', git: "git://github.com/radar/forem.git"
-gem 'forem-theme-base', git: "git://github.com/radar/forem-theme-base.git"
 gem 'kaminari', '0.13.0'
 
 # Industrial-strenth HTML sanitization.
@@ -39,6 +38,8 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass', '~> 2.0.4.0'
+  gem 'haml'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
