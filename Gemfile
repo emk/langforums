@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3.2.7'
 gem 'rails-i18n'
 
+# Use HAML templates to generate HTML.
+gem 'haml'
+
 # User account management.
 gem 'devise'
 gem 'devise-i18n'
@@ -39,7 +42,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '~> 2.0.4.0'
-  gem 'haml'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
