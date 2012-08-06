@@ -11,25 +11,27 @@
     = render partial: 'layouts/navbar'
     .container
       .row
-        .span12
+        .span8
           - if notice
-            %p.notice= notice
+            .alert.alert-success
+              %a.close{"data-dismiss" => "alert"} ×
+              %div= notice
           - if alert
-            %p.alert= alert
-      .row
-        .span8= yield
+            .alert.alert-error
+              %a.close{"data-dismiss" => "alert"} ×
+              %div= alert
+          = yield
         .span4
-          .site-note
-            %p  
-              <i>This site doesn't actually contain any forums.  You can
-              find those over on
-              <a href="how-to-learn-any-language.com">How-To-Learn-Any-Language.com</a>.
-              Instead, this site provides experimental features for HTLAL
-              users. <b>-emk</b> (a HTLAL user)</i></p>
+          .alert.alert-info
+            <p><b>HTLAL is down!</b>
+            See <a href="http://htlal.freeforums.org/">the backup
+            forum</a>.</p>
 
-              <p><b>HTLAL is down!</b>
-              See <a href="http://htlal.freeforums.org/">the backup
-              forum</a>.</p>
+            <p>This site doesn't actually contain any forums.  You can
+            find those over on
+            <a href="how-to-learn-any-language.com">How-To-Learn-Any-Language.com</a>.
+            Instead, this site provides experimental features for HTLAL
+            users. <b>-emk</b> (a HTLAL user)</p>
           %p
             = link_to t('.translate'), 'http://www.localeapp.com/projects/1537'
           - if current_user
