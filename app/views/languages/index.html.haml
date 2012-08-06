@@ -14,14 +14,14 @@
       %tr
         %td.name= link_to(language.inverted_name, language.wikipedia_url)
         %td.resources
-          = parens(link_to t('.sil'), language.ethnologue_url)
+          = sep(link_to t('.sil'), language.ethnologue_url)
           - if language.htlal_profile_url
-            = parens(link_to(t('.htlal_profile'), language.htlal_profile_url))
+            = sep(link_to(t('.htlal_profile'), language.htlal_profile_url))
           - if language.htlal_users_url
-            = parens(link_to(t('.htlal_users'), language.htlal_users_url))
+            = sep(link_to(t('.htlal_users'), language.htlal_users_url))
           - if language.htlal_threads_url
-            = parens(link_to(t('.htlal_threads'), language.htlal_threads_url))
-          = parens(link_to(t('.wiki'), language.htlal_wiki_url))
-          = parens(link_to(t('.maps'), language.llmap_url))
+            = sep(link_to(t('.htlal_threads'), language.htlal_threads_url))
+          = sep(link_to(t('.wiki'), language.htlal_wiki_url))
+          = link_to(t('.maps'), language.llmap_url)
 
 %p.sil-credit= t('.sil_credit').html_safe
