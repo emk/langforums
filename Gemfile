@@ -27,6 +27,10 @@ gem 'localeapp'
 # Check HTTP headers to see what languages the user understands.
 gem 'http_accept_language', git: "git://github.com/iain/http_accept_language.git"
 
+# Access to dbpedia.
+gem 'rdf'
+gem 'sparql-client'
+
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.0"

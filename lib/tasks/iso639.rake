@@ -557,4 +557,66 @@ EOD
       end
     end
   end
+
+  LANGUAGE_ISO_QUERY = <<EOD
+select distinct ?entity ?iso where {
+  ?entity a <http://dbpedia.org/ontology/Language>.
+  ?entity <http://dbpedia.org/property/iso> ?iso.
+}
+EOD
+
+  LANGUAGE_LABEL_QUERY = <<EOD
+select distinct ?entity ?label where {
+  ?entity a <http://dbpedia.org/ontology/Language>.
+  ?entity rdfs:label ?label.
+}
+EOD
+
+  task :localize_language_names => :environment do
+    sparql = SPARQL::Client.new("http://dbpedia.org/sparql")
+
+    # Map Wikipedia articles to ISO 639 codes.
+    puts "Querying dbpedia for ISO codes"
+    iso_codes = {}
+    sparql.query(LANGUAGE_ISO_QUERY).each_solution do |sln|
+      url, iso = sln[:entity].to_s, sln[:iso].to_s
+      (iso_codes[url] ||= []) << iso
+    end
+    puts "Found #{iso_codes.length} languages"
+
+    Language.transaction do
+      # Query for alternative article titles in various languages.
+      puts "Querying dbpedia for language labels"
+      sparql.query(LANGUAGE_LABEL_QUERY).each_solution do |sln|
+        url = sln[:entity].to_s
+        lang = sln[:label].language
+        label = sln[:label].object.to_s
+
+        # Search for matching languages.
+        isos = iso_codes[url]
+        if isos && url == 'http://dbpedia.org/resource/French_language'
+          isos.reject! {|iso| iso == 'fri' }
+        end
+        langs = Language.where(code: isos)
+        if langs.empty?
+          puts "Can't find language for #{url}: #{isos.inspect}"
+          next
+        elsif langs.length > 1
+          puts "Multiple languages match #{url}: #{isos.inspect}"
+          next
+        end
+
+        # Search for the language to which this name belongs.
+        in_lang = Language.where(code: lang).first
+        unless in_lang
+          puts "Can't find language used in name: #{lang}"
+          next
+        end
+
+        # Create our new record.
+        LanguageName.create!(language: langs.first, in_language: in_lang,
+                             name: label)
+      end
+    end
+  end
 end

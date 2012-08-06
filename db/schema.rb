@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803180706) do
+ActiveRecord::Schema.define(:version => 20120806164710) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -123,6 +123,18 @@ ActiveRecord::Schema.define(:version => 20120803180706) do
   add_index "forem_views", ["updated_at"], :name => "index_forem_views_on_updated_at"
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
+
+  create_table "language_names", :force => true do |t|
+    t.integer  "language_id"
+    t.integer  "in_language_id"
+    t.string   "name"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "language_names", ["in_language_id"], :name => "index_language_names_on_in_language_id"
+  add_index "language_names", ["language_id"], :name => "index_language_names_on_language_id"
+  add_index "language_names", ["name"], :name => "index_language_names_on_name"
 
   create_table "languages", :force => true do |t|
     t.integer  "macrolanguage_id"

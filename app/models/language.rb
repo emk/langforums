@@ -1,4 +1,8 @@
 class Language < ActiveRecord::Base
+  has_many :language_names
+  has_many(:names_of_other_languages, class_name: 'LanguageName',
+           foreign_key: 'in_language_id')
+
   attr_accessible :inverted_name, :iso_639_1, :iso_639_2b, :iso_639_2t
   attr_accessible :iso_639_3, :alt_code, :name, :iso_639_scope, :iso_639_type
 
