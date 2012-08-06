@@ -5,19 +5,23 @@
   = text_field_tag('q', @query, placeholder: t('.search_hint'), class: 'search-query')
   = submit_tag(t('.search_button'), name: nil, class: 'btn')
 
-%ul
-  - @languages.each do |language|
-    %li
-      = link_to(language.inverted_name, language.wikipedia_url)
-      %span.language-links
-        = parens(link_to t('.sil'), language.ethnologue_url)
-        - if language.htlal_profile_url
-          = parens(link_to(t('.htlal_profile'), language.htlal_profile_url))
-        - if language.htlal_users_url
-          = parens(link_to(t('.htlal_users'), language.htlal_users_url))
-        - if language.htlal_threads_url
-          = parens(link_to(t('.htlal_threads'), language.htlal_threads_url))
-        = parens(link_to(t('.wiki'), language.htlal_wiki_url))
-        = parens(link_to(t('.maps'), language.llmap_url))
+- unless @languages.empty?
+  %table.table.table-striped.languages
+    %tr
+      %th= t('.name')
+      %th= t('.resources')
+    - @languages.each do |language|
+      %tr
+        %td.name= link_to(language.inverted_name, language.wikipedia_url)
+        %td.resources
+          = parens(link_to t('.sil'), language.ethnologue_url)
+          - if language.htlal_profile_url
+            = parens(link_to(t('.htlal_profile'), language.htlal_profile_url))
+          - if language.htlal_users_url
+            = parens(link_to(t('.htlal_users'), language.htlal_users_url))
+          - if language.htlal_threads_url
+            = parens(link_to(t('.htlal_threads'), language.htlal_threads_url))
+          = parens(link_to(t('.wiki'), language.htlal_wiki_url))
+          = parens(link_to(t('.maps'), language.llmap_url))
 
 %p.sil-credit= t('.sil_credit').html_safe

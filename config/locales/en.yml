@@ -10,8 +10,10 @@ en:
       sil: SIL
       sil_credit: This database is based on the <a href="http://www.sil.org/iso639-3/">SIL
         language codes</a>.
-      title: Languages
+      title: Languages of the world
       wiki: wiki
+      name: Name
+      resources: Resources
   layouts:
     application:
       recent_users: ! 'Recent users:'
