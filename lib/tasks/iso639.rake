@@ -561,7 +561,8 @@ EOD
   LANGUAGE_ISO_QUERY = <<EOD
 select distinct ?entity ?iso where {
   ?entity a <http://dbpedia.org/ontology/Language>.
-  ?entity <http://dbpedia.org/property/iso> ?iso.
+  ?iso <http://dbpedia.org/ontology/wikiPageRedirects> ?entity.
+  FILTER regex(?iso, "^http://dbpedia\.org/resource/ISO_639:.*")
 }
 EOD
 
@@ -580,6 +581,7 @@ EOD
     iso_codes = {}
     sparql.query(LANGUAGE_ISO_QUERY).each_solution do |sln|
       url, iso = sln[:entity].to_s, sln[:iso].to_s
+      iso.sub!(%r{^http://dbpedia\.org/resource/ISO_639:}, '')
       (iso_codes[url] ||= []) << iso
     end
     puts "Found #{iso_codes.length} languages"
