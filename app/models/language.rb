@@ -20,7 +20,19 @@ class Language < ActiveRecord::Base
   # Search for a language.  This function may eventually become more
   # sophisticated.
   scope(:matches, lambda do |query|
-    where(Language.arel_table[:inverted_name].matches("%#{query}%"))
+    # ARel tables touched by this query.
+    lang = Language.arel_table
+    lang_name = LanguageName.arel_table
+
+    # Build our query.
+    pattern = "%#{query}%"
+    by_name = lang[:name].matches(pattern)
+    by_inverted_name = lang[:inverted_name].matches(pattern)
+    by_translated_name = lang_name[:name].matches(pattern)
+    arel_query = by_name.or(by_inverted_name).or(by_translated_name)
+
+    # Run our query.
+    includes(:language_names).where(arel_query)
   end)
 
   # Place ISO 639-1 languages first, because they're popular, and alphabetize
