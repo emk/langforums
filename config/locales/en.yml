@@ -18,6 +18,7 @@ en:
     application:
       recent_users: ! 'Recent users:'
       translate: Help translate this site!
+      translators: ! 'Translators:'
     navbar:
       edit_account: Edit account
       language_count:
@@ -67,3 +68,9 @@ en:
         public_name: Public name
     models:
       user: User
+  topic:
+    new:
+      subject: Subject
+    posts:
+      new:
+        text: Text

@@ -1,0 +1,76 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        current_password: Senha atual
+        email: Email
+        password: Senha
+        password_confirmation: Confirmar senha
+        public_name: Nome (público)
+    models:
+      user: Usuário
+  devise:
+    registrations:
+      edit:
+        title: Editar conta
+      new:
+        title: Registro
+  helpers:
+    submit:
+      user:
+        create: Registrar
+        update: Modificar conta
+  languages:
+    index:
+      htlal_profile: perfil do htlal
+      htlal_threads: posts do htlal
+      htlal_users: usuários do htlal
+      maps: mapas
+      name: Nome
+      resources: Recursos
+      search_button: Pesquisar
+      search_hint: Buscar por uma língua
+      sil: SIL
+      sil_credit: Esta database é baseada nos <a href="http://www.sil.org/iso639-3/">códigos
+        de linguagem SIL</a>.
+      title: Línguas do mundo
+      wiki: wiki
+  layouts:
+    application:
+      recent_users: ! 'Usuários recentes:'
+      translate: Ajude a traduzir este site!
+      translators: ! 'Tradutores:'
+    navbar:
+      edit_account: Editar conta
+      language_count:
+        zero: 0 línguas
+        one: Uma língua
+        other: ! '%{count} línguas'
+      report_bug: Reportar um bug
+      sign_in: Entrar
+      sign_out: Sair
+      sign_up: Registrar
+      source_code: Código fonte do langforums.org
+      test_forums: Fóruns de testes
+  simple_form:
+    error_notification:
+      default_message: ! 'Por favor, reveja os problemas abaixo:'
+    hints:
+      user:
+        edit:
+          current_password: nós precisamos da sua senha atual para realizar as mudanças
+          password: deixe em branco se não quiser mudar isto
+    'no': Não
+    required:
+      mark: ! '*'
+      text: necessário
+    'yes': Sim
+  topic:
+    new:
+      subject: Assunto
+    posts:
+      new:
+        text: Texto
+  user:
+    signed_in: Logado com sucesso.
+    signed_out: Deslogado com sucesso.

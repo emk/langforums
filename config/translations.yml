@@ -2,6 +2,8 @@
   name: English
 - code: fr
   name: le français
+- code: pt-BR
+  name: português brasileiro
 - code: bg
   name: български език
 - code: de
@@ -16,8 +18,6 @@
   name: Nederlands
 - code: pl
   name: język polski
-- code: pt-BR
-  name: português brasileiro
 - code: pt-PT
   name: português europeu
 - code: ru

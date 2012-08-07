@@ -18,6 +18,7 @@ fr:
     application:
       recent_users: ! 'Utilisateurs récents :'
       translate: Traduire ce site !
+      translators: ! 'Traducteurs :'
     navbar:
       language_count:
         one: 1 langue
